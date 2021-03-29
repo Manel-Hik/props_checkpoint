@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Profilecomponent from './profile/Profilecomponent'
+import myimage from './profile/manel.jpeg'
 function App() {
+  function handleName(name){
+    alert(`Hello my name is ${name}`)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Profilecomponent
+      fullName="Manel ALOUI"
+      bio="Hi guys, I'm Manel ALOUI, an engineer who loves writing novels, You are welcome to visit my profile!!"
+      profession="Junior data scientist and a full stack web developer"
+      handleName={handleName}
+      >
+      <img 
+      style={{borderRadius: "100%", width: "200px", height: "200px"}}
+      src ={myimage}
+      alt= "my_profile_picturee"
+      />
+      </Profilecomponent>
     </div>
   );
 }
